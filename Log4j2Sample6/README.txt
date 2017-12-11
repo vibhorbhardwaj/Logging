@@ -1,0 +1,1 @@
+RollingFile appender, Size based every 10 kb

@@ -1,0 +1,1 @@
+This will send all logs in console

@@ -1,0 +1,23 @@
+{
+	"configuration": {
+		"appenders": {
+			"appender": [
+				{
+					"type": "Console",
+					"name": "STDOUT",
+					"PatternLayout": {
+						"pattern": "%d %p %c{1.} [%t] %m%n"
+					}
+				}
+			]
+		},
+		"loggers": {
+			"root": {
+				"level": "DEBUG",
+				"AppenderRef": {
+					"ref": "STDOUT"
+				}
+			}
+		}
+	}
+}

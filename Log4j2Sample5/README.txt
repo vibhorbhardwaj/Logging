@@ -1,0 +1,1 @@
+RollingFile appender, time based every 1 min
