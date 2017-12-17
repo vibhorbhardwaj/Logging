@@ -6,10 +6,22 @@
 			<PatternLayout pattern="%d{HH:mm:ss.SSS}[%X] [%t] %-5level %logger{36} - %msg%n" />
 		</Console>
 		
+	<!-- Rolling File Appender for every 10kb -->
+		<RollingFile name="RollingFile">
+			<FileName>target/mylog.log</FileName>
+			<FilePattern>target/mylog%d{yyyy-MM-dd-hh-mm}.log.zip</FilePattern>
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%X] [%t] %-5level %logger{36} - %msg%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10 KB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5" />
+		</RollingFile>
+
 	</Appenders>
 	<Loggers>
 		<Root level="trace">
 			<AppenderRef ref="Console" />
+			<AppenderRef ref="RollingFile" />
 		</Root>
 	</Loggers>
 </Configuration>
